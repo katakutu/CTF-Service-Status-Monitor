@@ -5,13 +5,20 @@ h1{
 text-align: center;
 
 }
+
+h4{
+
+text-align: center;
+
+}
 </style>
 <h1>SHODAN Service Monitor</h1>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
 
-error_reporting(0);
+//error_reporting(1);
+$ini = parse_ini_file('config.ini');
 
 $status = "DOWN";
 $ftp = 21;
@@ -19,14 +26,14 @@ $ssh = 22;
 $mysql = 3306;
 $apache = 80;
 
-$shodan = 'logansimpson.xyz';
-$bowser = 'logansimpson.xyz';
-$funky = 'logansimpson.xyz';
-$shadow = 'logansimpson.xyz';
-$glados = 'logansimpson.xyz';
-$kirby = 'logansimpson.xyz';
-$rob = 'logansimpson.xyz';
-$conker = 'logansimpson.xyz';
+$shodan = $ini['shodan'];
+$bowser = $ini['bowser'];
+$funky = $ini['funky'];
+$shadow = $ini['shadow'];
+$glados = $ini['glados'];
+$kirby = $ini['kirby'];
+$rob = $ini['rob'];
+$conker = $ini['conker'];
 
 function getProperColor($value)
 {
@@ -63,6 +70,7 @@ function pingServer($ip, $port){
 <div class="row">
   <div class="col-sm-3">
         <h1>SHODAN</h1>
+	<h4><?php echo $shodan; ?></h4>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($shodan, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
