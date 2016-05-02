@@ -39,7 +39,7 @@ function getProperColor($value)
 function pingServer($ip, $port){
 	global $status;
     try {
-    	$file      = fsockopen ($ip, $port, $errno, $errstr, 10);
+    	$file      = fsockopen ($ip, $port, $errno, $errstr, 1);
 } catch(Exception $e){
   return "DOWN";
 }
