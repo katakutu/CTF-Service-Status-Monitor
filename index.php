@@ -2,22 +2,27 @@
 
 h1{
 
-text-align: center;
+text-align: left;
 
 }
 
 h4{
 
-text-align: center;
+text-align: left;
 
 }
 </style>
-<h1>SHODAN Service Monitor</h1>
-
+<h1 style="text-align: center;">SHODAN Service Monitor</h1>
+<h2 style="text-align: right; position:absolute;top:0px;right:5px;">Created By Logan Simpson</h2>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
 
-//error_reporting(1);
+date_default_timezone_set('America/Chicago');
+echo '<p style="text-align:center;">' . date("M-d-y h:i:s A e") . '</p>';
+
+header("Refresh: 45; URL=index.php");
+
+error_reporting(1);
 $ini = parse_ini_file('config.ini');
 
 $status = "DOWN";
@@ -65,12 +70,21 @@ function pingServer($ip, $port){
 .col-sm-3 {
  border: 2px solid black;
 }
+
+.thumbnail-icon{
+width:80px;
+height:80px;
+position:absolute;
+top:15px;
+right:15px;
+}
 </style>
 
 <div class="row">
   <div class="col-sm-3">
         <h1>SHODAN</h1>
 	<h4><?php echo $shodan; ?></h4>
+	<img src="images/shodan.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($shodan, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -82,6 +96,8 @@ function pingServer($ip, $port){
   </div>  
   <div class="col-sm-3">
         <h1>GLaDOS</h1>
+        <h4><?php echo $glados; ?></h4>
+        <img src="images/glados.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($glados, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -93,6 +109,8 @@ function pingServer($ip, $port){
   </div>  
   <div class="col-sm-3">
         <h1>Bowser</h1>
+        <h4><?php echo $bowser; ?></h4>
+        <img src="images/bowser.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($bowser, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -103,7 +121,9 @@ function pingServer($ip, $port){
         <p style="background-color: <?php echo getProperColor(pingServer($bowser, $mysql)); ?>;">&nbsp;</p>
   </div>  
   <div class="col-sm-3">
-        <h1>Funky Kong</h1>
+        <h1 style="text-align:left;">Funky Kong</h1>
+        <h4><?php echo $funky; ?></h4>
+        <img src="images/funky.png" class='thumbnail-icon' style="height:120px;"/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($funky, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -119,6 +139,8 @@ function pingServer($ip, $port){
 
   <div class="col-sm-3">
         <h1>Shadow</h1>
+        <h4><?php echo $shadow; ?></h4>
+        <img src="images/shadow.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($shadow, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -130,6 +152,8 @@ function pingServer($ip, $port){
   </div>
     <div class="col-sm-3">
         <h1>Kirby</h1>
+        <h4><?php echo $kirby; ?></h4>
+        <img src="images/kirby.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($kirby, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -141,6 +165,8 @@ function pingServer($ip, $port){
   </div>
     <div class="col-sm-3">
         <h1>R.O.B.</h1>
+        <h4><?php echo $rob; ?></h4>
+        <img src="images/rob.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($rob, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
@@ -152,6 +178,8 @@ function pingServer($ip, $port){
   </div>
     <div class="col-sm-3">
         <h1>Conker</h1>
+        <h4><?php echo $conker; ?></h4>
+        <img src="images/conker.png" class='thumbnail-icon'/>
         <b>FTP</b>
         <p style="background-color: <?php echo getProperColor(pingServer($conker, $ftp)); ?>;">&nbsp;</p>
         <b>SSH</b>
