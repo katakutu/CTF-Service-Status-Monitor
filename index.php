@@ -13,7 +13,7 @@ text-align: left;
 }
 </style>
 <h1 style="text-align: center;">SHODAN Service Monitor</h1>
-<h2 style="text-align: right; position:absolute;top:0px;right:5px;">Created By Logan Simpson</h2>
+<a href='http://www.github.com/logepoge1' style="text-align: right; position:absolute;top:5px;right:5px;"><img src="GitHub-Mark-32px.png"/></a>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
 
@@ -192,3 +192,4 @@ right:15px;
 
 </div>
 
+<div class="footer" style="bottom:0px;text-align:center;"><b>Created By <a href="http://www.logansimpson.xyz">Logan Simpson</a></b></div>
